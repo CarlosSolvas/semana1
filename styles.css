@@ -1,0 +1,236 @@
+/* ---- ESTILOS GENERALES ---- */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+  color: #333;
+}
+
+/* ---- ANIMACIÓN DE ENTRADA ---- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- ENCABEZADO ---- */
+header {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  font-size: 32px;
+}
+
+/* ---- NAVEGACIÓN ---- */
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover {
+  color: #ffcc00;
+  transform: scale(1.1);
+}
+
+/* ---- FORMULARIO ---- */
+form {
+  width: 90%;
+  max-width: 700px;
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  display: grid;
+  gap: 15px;
+  margin: 30px auto;
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards 0.5s;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+textarea {
+  resize: none;
+  height: 120px;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #007bff;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.5);
+}
+
+/* ---- BOTÓN CON EFECTOS ---- */
+button {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #0056b3, #004080);
+  transform: scale(1.05);
+}
+
+/* ---- MENSAJES DE ERROR ---- */
+.input-error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.error.mostrar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---- SECCIÓN DE SERVICIOS ---- */
+#servicios {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+#servicios h2 {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.servicios-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.servicio {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+}
+
+.servicio:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Imágenes de servicios */
+.servicio img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+.servicio h3 {
+  color: #007bff;
+  margin-top: 10px;
+}
+
+.servicio p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* ---- PIE DE PÁGINA ---- */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  width: 100%;
+  margin-top: auto;
+  font-size: 16px;
+}
+
+/* ---- MEDIA QUERIES PARA RESPONSIVE ---- */
+@media screen and (max-width: 768px) {
+  form {
+    padding: 25px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .servicios-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+}
